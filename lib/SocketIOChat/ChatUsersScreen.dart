@@ -1,3 +1,4 @@
+import 'package:app_chatting/SocketIOChat/LoginScreen.dart';
 import 'package:app_chatting/SocketIOChat/User.dart';
 import 'package:flutter/material.dart';
 import 'Global.dart';
@@ -23,11 +24,24 @@ class _ChatUsersScreenState extends State<ChatUsersScreen>{
     _chatUsers = G.getUsersFor(G.loggedInUser);
   }
 
+  _openLoginScreen(context) async{
+    await Navigator.pushReplacementNamed(
+        context,
+        LoginScreen.ROUTE_ID,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Chat Users"),
+        actions: <Widget>[IconButton(
+            icon: Icon(Icons.close),
+            onPressed: (){
+              _openLoginScreen(context);
+          })
+        ],
       ),
       body: Container(
         alignment: Alignment.center,
