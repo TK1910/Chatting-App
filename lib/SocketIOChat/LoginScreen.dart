@@ -28,6 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.green,
         title: Text("Let's Chat!"),
       ),
       body: Container(

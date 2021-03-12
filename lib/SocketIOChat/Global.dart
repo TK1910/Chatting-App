@@ -6,6 +6,8 @@ class G {
 
   static User loggedInUser;
 
+  static User toChatUser;
+
   static void initDummyUsers(){
     User userA = User(id: 1000, name: 'A', email: 'usuario1@gmail.com');
     User userB = User(id: 1000, name: 'B', email: 'usuario2@gmail.com');
