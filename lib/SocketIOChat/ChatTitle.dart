@@ -21,25 +21,26 @@ class ChatTitle extends StatelessWidget{
         crossAxisAlignment: CrossAxisAlignment.center,
           children:<Widget>[
               Text(toChatUser.name),
-              Text(_getStatusText(),
+              Text(_getStatusText().toString(),
               style: TextStyle(
                 fontSize: 14.0,
                 color: Colors.white,
-              ),),
-          ],
+              ),
+            ),
+         ],
       ),
     );
   }
 
   _getStatusText(){
     if (UserOnlineStatus == UserOnlineStatus.online){
-      return 'online';
+      return 'online'.toString();
     }
     if (UserOnlineStatus == UserOnlineStatus.not_online){
-      return 'offline';
+      return 'not_online'.toString();
     }
     if (UserOnlineStatus == UserOnlineStatus.connecting){
-      return 'connecting...';
+      return 'connecting...'.toString();
     }
   }
 }
